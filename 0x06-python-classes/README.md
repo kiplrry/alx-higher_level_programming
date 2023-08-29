@@ -1,1 +1,1 @@
-0x06-pythpn-classes
+0x06-python-classes
