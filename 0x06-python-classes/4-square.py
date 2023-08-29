@@ -14,7 +14,7 @@ class Square:
         """
         Action to obtain the atribute value
         """
-        return(self.__size)
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -32,4 +32,4 @@ class Square:
         """
         Function to find a square area
         """
-        return(self.__size**2)
+        return (self.__size**2)

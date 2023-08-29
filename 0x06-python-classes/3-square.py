@@ -18,4 +18,4 @@ class Square:
         """
         Function to find a square area
         """
-        return(self.__size**2)
+        return (self.__size**2)

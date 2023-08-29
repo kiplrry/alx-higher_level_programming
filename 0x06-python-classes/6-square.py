@@ -26,7 +26,7 @@ class Square:
         """
         Action to obtain the atribute value
         """
-        return(self.__size)
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -45,7 +45,7 @@ class Square:
         """
         Obtain the atribute position value
         """
-        return(self.__position)
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -65,7 +65,7 @@ class Square:
         """
         Function to find a square area
         """
-        return self.__size**2
+        return (self.__size**2)
 
     def my_print(self):
         """
