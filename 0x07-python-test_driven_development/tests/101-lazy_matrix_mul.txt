@@ -1,0 +1,75 @@
+The ``101-lazy_matrix_mul`` module
+======================
+
+Using ``101-lazy_matrix_mul``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``101-lazy_matrix_mul.txt`` for use in ``101-main`` module:
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Now use it, ideal case:
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    [[7, 10], [15, 22]]
+
+    >>> m_a = [[1.2, 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    [[7.2, 10.4], [15, 22]]
+
+    >>> m_a = [[1, -2], [-3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    [[-5, -6], [9, 10]]
+
+At no ideal cases:
+    >>> m_a = []
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    ValueError: shapes (0,) and (2,2) not aligned: (dim 0) != 2 (dim 0)
+
+    >>> m_a = [[1.2, 2], [3, 4]]
+    >>> m_b = []
+    >>> lazy_matrix_mul(m_a,m_b)
+    Traceback (most recent call last):
+    ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+
+    >>> m_a = []
+    >>> m_b = []
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a)
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+    >>> m_a = 'omre'
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    TypeError: m_a must be a list
+
+    >>> m_b = 'omre'
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    TypeError: m_b must be a list
+
+    >>> m_a = [['a', 2], [3, 4]]
+    >>> m_b = [[1, 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
+
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [['a', 2], [3, 4]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    TypeError: m_b should contain only integers or floats

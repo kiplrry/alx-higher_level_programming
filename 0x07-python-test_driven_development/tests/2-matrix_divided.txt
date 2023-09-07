@@ -1,0 +1,95 @@
+ The ``2-matrix_divided`` module
+======================
+
+Using ``2-matrix_divided``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``2-matrix_divided.py`` for use in ``2-main`` module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+Integers and floats cases:
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> matrix = [[1.3, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.43, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> matrix = [[1, 2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.43, 1.67, 2.0]]
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3.2)
+    [[0.31, 0.62, 0.94], [1.25, 1.56, 1.88]]
+
+    >>> matrix = [[1.3, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3.2)
+    [[0.41, 0.62, 0.94], [1.25, 1.56, 1.88]]
+
+    >>> matrix = [[1, 2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, 3.2)
+    [[0.31, 0.62, 0.94], [1.34, 1.56, 1.88]]
+
+    >>> matrix = [[1.3, 2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, 3.2)
+    [[0.41, 0.62, 0.94], [1.34, 1.56, 1.88]]
+
+    >>> matrix = [[1, -2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, 3.2)
+    [[0.31, -0.62, 0.94], [1.34, 1.56, 1.88]]
+
+    >>> matrix = [[1, -2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, -3)
+    [[-0.33, 0.67, -1.0], [-1.43, -1.67, -2.0]]
+
+
+    >>> matrix = [[1000000000, -2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, -3)
+    [[-333333333.33, 0.67, -1.0], [-1.43, -1.67, -2.0]]
+
+
+Math error:
+
+    >>> matrix = [[1, -2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+The divisor are not a number:
+
+    >>> matrix = [[1, -2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix, 'a')
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+There is not divisor in ther second argument
+    >>> matrix = [[1, -2, 3], [4.3, 5, 6]]
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+There is a element that is a string
+
+    >>> matrix = [[1, -2, 3], ['omre', 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+The matrix value is not a matrix
+    >>> matrix = 'omre'
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+The size of row are different each other:
+
+    >>> matrix = [[1, 2], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size

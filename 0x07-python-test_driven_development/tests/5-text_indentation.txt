@@ -1,0 +1,55 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``5-text_indentation``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``5-text_indentation.txt`` for use in ``5-main`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it, ideal case:
+
+    >>> text_indentation('Lorem ipsum dolor: sit amet? consectetur adipiscing. elit')
+    Lorem ipsum dolor:
+    <BLANKLINE>
+    sit amet?
+    <BLANKLINE>
+    consectetur adipiscing.
+    <BLANKLINE>
+    elit
+
+    >>> text_indentation('omre')
+    omre
+
+    >>> text_indentation('enta, omre')
+    enta, omre
+
+    >>> text_indentation('enta. omre')
+    enta.
+    <BLANKLINE>
+    omre
+
+    >>> text_indentation('enta? omre')
+    enta?
+    <BLANKLINE>
+    omre
+
+    >>> text_indentation('enta: omre')
+    enta:
+    <BLANKLINE>
+    omre
+
+    >>> text_indentation('enta.')
+    enta.
+    <BLANKLINE>
+
+    >>> text_indentation('. enta')
+    .
+    <BLANKLINE>
+    enta
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
