@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-simple_delete = __import__('8-simple_delete').simple_delete
-print_sorted_dictionary = \
-    __import__('6-print_sorted_dictionary').print_sorted_dictionary
+best_score = __import__('10-best_score').best_score
 
-a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low", 'ids': [1, 2, 3] }
-new_dict = simple_delete(a_dictionary, 'track')
-print_sorted_dictionary(a_dictionary)
-print("--")
-print_sorted_dictionary(new_dict)
+a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}
+best_key = best_score(a_dictionary)
+print("Best score: {}".format(best_key))
 
-print("--")
-print("--")
-new_dict = simple_delete(a_dictionary, 'c_is_fun')
-print_sorted_dictionary(a_dictionary)
-print("--")
-print_sorted_dictionary(new_dict)
+best_key = best_score(None)
+print("Best score: {}".format(best_key))
