@@ -5,6 +5,7 @@ when special characters appears
 and care the spaces that has a SC before
 '''
 
+
 def text_indentation(text):
    '''
    Is the module that splits the text

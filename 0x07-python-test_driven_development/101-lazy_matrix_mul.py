@@ -4,6 +4,8 @@ This modules uses numpy
 a library used for algebraic maths
 in order to multiplies two matrix
 '''
+
+
 def lazy_matrix_mul(m_a, m_b):
     '''
     function that gives the result matrix

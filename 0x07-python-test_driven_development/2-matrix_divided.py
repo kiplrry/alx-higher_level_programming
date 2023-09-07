@@ -17,14 +17,14 @@ def matrix_divided(matrix, div):
 
     for lst in matrix:
         for number in lst:
-            if not(isinstance(number, int) or isinstance(number, float)):
+            if not (isinstance(number, int) or isinstance(number, float)):
                 raise TypeError(long_error)
 
     if not all(map(lambda lst: len(matrix[0]) == len(lst), matrix)):
         raise TypeError(
             'Each row of the matrix must have the same size')
 
-    if not(type(div) is int or type(div) is float):
+    if not (type(div) is int or type(div) is float):
         raise TypeError('div must be a number')
 
     if div == 0:
