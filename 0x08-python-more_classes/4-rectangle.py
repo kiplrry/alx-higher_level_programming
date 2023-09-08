@@ -52,3 +52,6 @@ class Rectangle:
             return ""
         return (("#" * self.__width + "\n")
                 * (self.__height - 1) + "#" * self.__width)
+
+    def __repr__(self) -> str:
+        return f"Rectangle({self.__width}, {self.__height})"
