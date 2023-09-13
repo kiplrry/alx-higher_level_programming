@@ -5,6 +5,9 @@ class
 
 
 def add_attribute(obj, name, value):
+    """
+    a functio
+    """
     if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
     else:
