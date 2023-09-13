@@ -1,0 +1,67 @@
+The ``7-base_geometry'`` module
+======================
+
+Using ``7-base_geometry'``
+-------------------
+
+This is an test in text file.  First import
+``7-base_geometry'`` from the ``7-main`` module:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it, expected way:
+
+    >>> bg = BaseGeometry()
+
+
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+    ValueError: distance must be greater than 0
+
+More mutables objects:
+
+    >>> bg.integer_validator("ls", [1, 3, 6])
+    Traceback (most recent call last):
+    TypeError: ls must be an integer
+
+More inmutables object:
+
+    >>> bg.integer_validator("tp", (1, 3, 6))
+    Traceback (most recent call last):
+    TypeError: tp must be an integer
+
+Passing 1 argument:
+
+    >>> bg.integer_validator("name")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+ 
+Passing 3 arguments:
+
+    >>> bg.integer_validator("name", "John", 7)
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Passin 0 arg:
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Passin None arg:
+    >>> bg.integer_validator(None)
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Passing the area definition:
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
