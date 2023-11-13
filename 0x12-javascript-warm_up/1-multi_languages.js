@@ -1,4 +1,3 @@
 #!/usr/bin/node
-console.log(`C is fun
-Python is cool
-Javascript is amazing`)
+let msg = `C is fun\nPython is cool\nJavaScript is amazing`
+console.log(msg)
