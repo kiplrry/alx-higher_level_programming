@@ -23,4 +23,4 @@ class Square extends Sq {
     }
   }
 }
-module.exports = Square
+module.exports = Square;
