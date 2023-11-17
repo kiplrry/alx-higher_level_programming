@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This is a scipt to get states from a db
+"""
+
+
 if __name__ == "_main__":
     import sys
     import MySQLdb
