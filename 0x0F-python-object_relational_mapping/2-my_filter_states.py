@@ -21,7 +21,7 @@ if __name__ == "__main__":
     }
     db = MySQLdb.connect(**details)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}'\
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'\
                 ORDER BY id ASC".format(args[4]))  # should be a tuple
     res = cur.fetchall()
     for row in res:
