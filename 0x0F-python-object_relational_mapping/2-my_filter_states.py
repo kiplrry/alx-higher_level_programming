@@ -21,8 +21,8 @@ if __name__ == "__main__":
     }
     db = MySQLdb.connect(**details)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
-                (args[4],))  # should be a tuple
+    cur.execute("SELECT * FROM states WHERE name = '{}'\
+                ORDER BY id ASC".format(args[4]))  # should be a tuple
     res = cur.fetchall()
     for row in res:
         print(row)
