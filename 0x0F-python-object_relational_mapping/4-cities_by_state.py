@@ -17,8 +17,8 @@ if __name__ == "__main__":
     }
     db = MySQLdb.connect(**details)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s\
-                ORDER BY id ASC", (args[4],))  # should be a tuple
+    cur.execute("SELECT cities.id, cities.name, states.name  FROM cities\
+                JOIN states ON states.id = cities.state_id")
     res = cur.fetchall()
     for row in res:
         print(row)
