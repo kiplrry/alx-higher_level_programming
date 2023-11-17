@@ -8,12 +8,10 @@ import MySQLdb
 
 if __name__ == "_main__":
     """
-    The script 
+    The script
     """
 
     args = sys.argv
-    if len(args) < 4:
-        sys.exit(1)
     details = {
         'host': 'localhost',
         'port': 3306,
