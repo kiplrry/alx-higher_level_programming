@@ -2,11 +2,14 @@
 """
 This is a scipt to get states from a db
 """
+import sys
+import MySQLdb
 
 
 if __name__ == "_main__":
-    import sys
-    import MySQLdb
+    """
+    The script 
+    """
 
     args = sys.argv
     if len(args) < 4:
