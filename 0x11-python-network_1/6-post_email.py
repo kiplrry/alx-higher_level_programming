@@ -10,5 +10,5 @@ from sys import argv
 if __name__ == "__main__":
     data = {'email': argv[2]}
 
-    res = requests.post(argv[1], params=data)
+    res = requests.post(argv[1], data=data)
     print(res.text)
