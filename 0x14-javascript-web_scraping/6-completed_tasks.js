@@ -6,11 +6,12 @@ const users = {};
 
 function sorter (todos) {
   todos.forEach((todo) => {
-    users[todo.userId] = !(todo.userId in users)
-      ? 0
-      : todo.completed
-        ? ++users[todo.userId]
-        : users[todo.userId];
+    if (!(todo.userId in users) && todo.completed) {
+      users[todo.userId] = 0;
+    }
+    if (todo.completed) {
+      users[todo.userId] += 1;
+    }
   });
 }
 
