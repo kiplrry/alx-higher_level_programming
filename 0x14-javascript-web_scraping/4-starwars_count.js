@@ -8,9 +8,6 @@ const urlpath = process.argv[2];
 function count (films) {
   let num = 0;
   for (const film of films) {
-    // if (film.characters.includes(person)) {
-    //   num += 1;
-    // }
     film.characters.forEach((char) => {
       if (char.includes(id)) {
         num += 1;
