@@ -6,8 +6,8 @@ const users = {};
 
 function sorter (todos) {
   todos.forEach((todo) => {
-    users[todo.userId] = !users[todo.userId]
-      ? 1
+    users[todo.userId] = !(todo.userId in users)
+      ? 0
       : todo.completed
         ? ++users[todo.userId]
         : users[todo.userId];
